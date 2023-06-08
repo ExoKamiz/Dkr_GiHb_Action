@@ -19,11 +19,11 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v1
 
-      - name: Login to GitHub Packages
+      - - name: Login to GitHub Packages
   uses: docker/login-action@v1
   with:
     registry: ghcr.io
-    username: ${{ github.repository_owner }}
+    username: exokamiz
     password: ${{ secrets.GITHUB_TOKEN }}
 
 - name: Build and push Docker images
@@ -33,7 +33,7 @@ jobs:
     push: true
     tags: |
       ghcr.io/exokamiz/dkr_fihb_action/app:x86_64
-      ghcr.io/${{ github.repository_owner }}/app:arm64
+      ghcr.io/exokamiz/app:arm64
 
   env:
           DOCKER_BUILDKIT: 1
