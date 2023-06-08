@@ -32,7 +32,7 @@ jobs:
     context: .
     push: true
     tags: |
-      ghcr.io/${{ github.repository_owner }}/app:x86_64
+      ghcr.io/exokamiz/dkr_fihb_action/app:x86_64
       ghcr.io/${{ github.repository_owner }}/app:arm64
 
   env:
